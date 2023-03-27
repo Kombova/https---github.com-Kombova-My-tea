@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply text-lg 
+}
+.menu-item {
+    @apply  decoration-2 hover:underline hover:underline-offset-4 hover:decoration-main-green
+  }
+.active {
+    @apply underline underline-offset-4 decoration-main-green text-tea-green
+}
+.styleOfDeliveryForms{
+   @apply w-[500px] h-[60px] border-2 bg-slate-200  rounded-lg text-center max-[530px]:w-[300px]
+}
+.styleOfDeliveryButtons{
+    @apply w-[500px] h-[60px] border-2 bg-green-700  rounded-lg text-center max-[530px]:w-[300px]
+}
+
+
