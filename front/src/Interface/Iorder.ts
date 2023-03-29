@@ -1,7 +1,7 @@
 import IItemCart from "./IItemCart";
 interface Iorder{
     [key:string]:any;
-    shopingArr:IItemCart[] | string;
+    shopingArr:IItemCart[];
     deliveryMethod:string;
     name:string;
     surname:string;

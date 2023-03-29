@@ -1,4 +1,5 @@
 import IapiRequest from "@/Interface/IapiRequest";
+import { json } from "stream/consumers";
 
 
 export const apiRequest:IapiRequest = {
@@ -7,6 +8,7 @@ export const apiRequest:IapiRequest = {
     fetchAdressImg: 'http://localhost:5000/',
     fetchAdressOrders: 'http://localhost:5000/api/orders/',
     loadingData: false,
+    // Items request
     getAllItems: async function(){
                     this.loadingData = true;
                     const response = await fetch(this.fetchAdress);
@@ -49,17 +51,46 @@ export const apiRequest:IapiRequest = {
             console.error('Не получилось удалить товар...', error); 
         });
     },
+    // Order request
     postOrder: function(formData){
         fetch(this.fetchAdressOrders, {
         method: 'POST',
-        body: formData,
+        headers: {  
+            "Content-Type": "application/json" 
+          },
+        body: JSON.stringify(formData) ,
         })
         .then(response => response.json())
-        .then(data => {alert('Товар отправлен',data)})
-        .then(data =>{window.location.reload()})
+        .then(data => {alert('Товар отправлен')})
+        // .then(data =>{window.location.reload()})
         .catch(error => {console.error(error)
             alert('Не удача!!!')
         });
-    }
+    },
+    deleteOrder: function(id){
+        fetch(`${this.fetchAdressOrders}${id}`, { method: 'DELETE'}) 
+        .then(response => { 
+            if (!response.ok) { 
+            throw new Error('Что-то пошло не так ...'); 
+            } 
+            console.log('Товар Удален'); 
+        })
+        // .then(data =>{window.location.reload()}) 
+        .catch(error => { 
+            console.error('Не получилось удалить товар...', error); 
+        });
+    },
+    getAllOrders: async function(){
+        this.loadingData = true;
+        const response = await fetch(this.fetchAdressOrders);
+        const data = await response.json();
+        this.loadingData = false;
+        return data
+    },
+    getAloneOrder: async function(id){
+        const response = await fetch(this.fetchAdressOrders + id);
+        const data = await response.json();
+        return data;
+},
 }
 

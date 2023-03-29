@@ -12,7 +12,7 @@ export default function Document() {
         <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Pacifico&family=Shantell+Sans:wght@300&display=swap" rel="stylesheet"/>
       </Head>
       <body>
-        <Main />
+        <Main/>
         <NextScript />
       </body>
     </Html>

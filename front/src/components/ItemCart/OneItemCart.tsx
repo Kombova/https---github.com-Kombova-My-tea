@@ -7,7 +7,7 @@ import IItemCart from "@/Interface/IItemCart";
 import { useSelector } from "react-redux";
 import { RootState } from "@/Interface/IreducerState";
 const OneItemCart:FC<{item:IItemCart,}> = ({item}) =>{
-    console.log(item)
+    
     const dispath = useDispatch()
     const counter = useSelector((state:RootState) => state.basketChenge.count)
     const arr = useSelector((state:RootState) => state.basketChenge.shopingArr)

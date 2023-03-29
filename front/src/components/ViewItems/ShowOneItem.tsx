@@ -15,7 +15,7 @@ const ShowOneItem: React.FC<{Item:IItem}> = ({Item}) =>{
     
     return(
         <li className=" w-[280px] h-[450px] border border-black flex flex-col gap-1 items-center relative pt-[10px] px-[5px] max-[450px]:w-screen">
-            <div className="w-[200px] h-[200px]">
+            <div className="w-[200px] h-[200px] hover:w-[195px]">
                 <Link href={_id}>
                     <Image
                         loader={myLoader}

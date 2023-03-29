@@ -3,12 +3,14 @@ import { useState } from "react";
 import Iorder from "@/Interface/Iorder";
 import { useSelector } from "react-redux";
 import { RootState } from "@/Interface/IreducerState";
+import { apiRequest } from "@/services/services";
+
 const NovaPoshta = () =>{
     const[nameError,setNameErr]=useState<string>('');
     const[sureNameError,setSureNameErr]=useState<string>('');
     const[patronimicError,setPatronimicErr]=useState<string>('');
     let shoppingArr = useSelector((state:RootState) => state.basketChenge.shopingArr)
-    let order:Iorder={
+    let order:any={
         shopingArr: shoppingArr,
         deliveryMethod: "Нова пошта",
         name: "",
@@ -63,7 +65,8 @@ const NovaPoshta = () =>{
             order.branch = e.target.value;
         } 
         let send = () =>{
-            console.log(order)
+            order.shopingArr=JSON.stringify(order.shopingArr);           
+            apiRequest.postOrder(order)
         }
     return(
         <div id="down" className=" h-[1000px]  mt-[20px] ">

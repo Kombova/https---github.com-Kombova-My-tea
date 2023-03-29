@@ -62,10 +62,10 @@ const OneItemFull: FC<{item:IItem}> = ({item}) =>{
 
     return(
         <div className="wrip w-screen">
-            <div className="max-w-[1440px] px-1 py-5 mx-auto relative">
+            <div className="max-w-[1440px] px-1 mx-auto relative">
 {/* ------------------Title ---------------------*/}
-                <h6 className=" text-[30px] pb-[10px] text-center font-bold font-[lobster] border-b-2 border-[black]">{title}</h6>
-                <div className='mt-[20px]  flex justify-between max-[750px]:flex-col max-[750px]:items-center' >
+                <h6 className=" text-[30px] py-[20px] text-center font-bold font-[lobster] border-b-2 border-[black]">{title}</h6>
+                <div className='mt-[20px] py-[20px]  flex justify-between max-[750px]:flex-col max-[750px]:items-center' >
 {/* ----------------------Img & Price----------------------------- */}
                     <div className="allImages & price  px-[5px]">
                         {selectImage == null ? <div className="">{mainImage}</div> : <div className=""><img src={selectImage} width='500px' height='500px' className="border-2 border-[black]"/></div>}                   

@@ -29,7 +29,8 @@ export class OrdersService {
     return `This action updates a #${id} order`;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} order`;
+  async remove(id: ObjectId) {
+    const order = await this.orderModel.findByIdAndRemove({ _id: id });
+    return order;
   }
 }

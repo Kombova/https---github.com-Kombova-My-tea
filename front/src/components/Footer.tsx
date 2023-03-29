@@ -15,11 +15,11 @@ const Footer = () => {
             <span className="font-bold text-xl">Company Name</span>
           </div>
           <div className="flex flex-col items-center lg:flex-row lg:justify-between lg:w-1/3">
-            <div className="mb-4 lg:mb-0">
-              <FontAwesomeIcon icon={faPhone} className="mr-2" />
+            <div className="mb-4 lg:mb-0 ">
+              <FontAwesomeIcon icon={faPhone} className="mr-2"  />
               <a href="tel:+123456789">+1 (234) 567-89</a>
             </div>
-            <div>
+            <div className=''>
               <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
               <a href="mailto:info@company.com">info@company.com</a>
             </div>

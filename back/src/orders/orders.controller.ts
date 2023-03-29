@@ -29,7 +29,7 @@ export class OrdersController {
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.ordersService.remove(+id);
+  remove(@Param('id') id: ObjectId) {
+    return this.ordersService.remove(id);
   }
 }

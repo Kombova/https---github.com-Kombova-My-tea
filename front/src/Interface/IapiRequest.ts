@@ -11,5 +11,9 @@ interface IapiRequest{
     deleteItem: (id:string)=> void;
     
     postOrder: (formData:any)=> void
+    getAllOrders: ()=>Promise<[]>;
+    getAloneOrder: (id:string)=>Promise<any>;
+    deleteOrder: (id:string)=> void;
+
 }
 export default IapiRequest;

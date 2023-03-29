@@ -1,6 +1,7 @@
-import Header from '@/components/Header'
-import MainSlider from '@/components/MainSlider'
-import Head from 'next/head'
+import Header from '@/components/Header';
+import MainSlider from '@/components/MainSlider';
+import Head from 'next/head';
+import HomeItems from '@/components/HomeItems/HomeItems';
 
 
 export default function Home() {
@@ -13,7 +14,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <MainSlider/>
-      
+      <HomeItems/>
     </>
   )
 }

@@ -12,7 +12,6 @@ import Layout from '../components/layout/layout';
 
 
 export default function App({ Component, pageProps }: AppProps) {
- console.log(Component.name)
   if(Component.name == 'admin'){
    return (
         <Component {...pageProps} /> 

@@ -4,20 +4,20 @@ import { useState } from "react";
 import Iorder from "@/Interface/Iorder";
 import { RootState } from "@/Interface/IreducerState";
 import { apiRequest } from "@/services/services";
+
 const SelfDelivery = () =>{
     const[nameError,setNameErr]=useState<string>('');
     const[sureNameError,setSureNameErr]=useState<string>('');
     const[patronimicError,setPatronimicErr]=useState<string>('');
     let shopingArr = useSelector((state:RootState) => state.basketChenge.shopingArr)
-    let order:Iorder={
+    let order:any={
         shopingArr: shopingArr,
         deliveryMethod: "Самовивіз",
         name: "",
         surname: "",
         patronymic: "",
         number: 0
-    };
-    const formData = new FormData();  
+    };  
         let chekName=(e:any)=>{
             let target = e.target;
             order.name=target.value;
@@ -58,19 +58,8 @@ const SelfDelivery = () =>{
             order.email=e.target.value ;
         }
         let send = () =>{
-            
-            // let shopingArr =  JSON.stringify(order.shopingArr)
-            order.shopingArr=JSON.stringify(order.shopingArr);
-            // Object.keys(order).forEach((key)=>{   
-            //     formData.append(key,order[key])
-            //     console.log(formData.get(key))
-            // })
-            formData.append('name', 'John Doe');
-            formData.append('email', 'johndoe@example.com');
-            formData.append('phone', '1234567890');
-            formData.append('shopingArr', JSON.stringify(['item1', 'item2', 'item3']));
-            console.log(order.shopingArr)
-             apiRequest.postOrder(order)
+            order.shopingArr=JSON.stringify(order.shopingArr);            
+            apiRequest.postOrder(order)
         } 
     return(
         <div className="  mt-[20px] ">

@@ -2,7 +2,7 @@ import ShowOneItem from "./ShowOneItem";
 import { apiRequest } from "@/services/services";
 import {useEffect, useState } from "react";
 import IItem from "@/Interface/IItem";
-import loading_gif from '../../../public/loading2.gif';
+import loading_gif from '../../../public/loading.svg';
 import Image from "next/image";
 
 
@@ -24,9 +24,9 @@ const ViewAllItems = () =>{
     }
 
     return(
-        <div className=" w-full "> 
+        <div className="w-full"> 
             <ul className=" max-w-[1440px] pt-[20px] pb-[20px] mx-auto flex flex-wrap gap-2  items-center text-center max-[820px]:justify-center">  
-                {connectingArrDB.length === 0 ? <Image src={loading_gif} className='w-full' alt="Picture of the author" width={300} height={200} quality={100}/> : viewAllItems}
+                {connectingArrDB.length === 0 ? <Image src={loading_gif} className=' w-2/4 mx-auto' alt="Picture of the author" width={300} height={200} quality={100}/> : viewAllItems}
             </ul>
         </div>    
     )

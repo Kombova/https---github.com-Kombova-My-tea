@@ -2,7 +2,8 @@ import { apiRequest } from "@/services/services";
 import IItem from "@/Interface/IItem";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import loading_icon from '../../../public/loading.gif'
+import loading_icon from '../../../public/loading.svg'
+
 
 let Items:JSX.Element[];
 const ProductRemoval = () =>{
@@ -45,7 +46,7 @@ const ProductRemoval = () =>{
    
     return(
         <div className="flex flex-wrap max-[450px]:justify-center gap-2">
-            {arrItems ?  arrItems : <Image src={loading_icon} className='w-[250px] mx-auto my-auto'  alt="Picture of the author" width={500} height={500} quality={100}/>}
+            {arrItems ?  arrItems : <Image src={loading_icon} className='w-2/4 mx-auto my-auto'  alt="Picture of the author" width={500} height={500} quality={100}/>}
         </div>
     )
 }
